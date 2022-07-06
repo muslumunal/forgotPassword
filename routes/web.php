@@ -45,6 +45,9 @@ Route::prefix('/post')->name('post.')->group(function (){
 
 Route::get('/post',[HomeController::class,'home'])->name('post');
 */
-
 Route::get('/forgotpassword',[UserController::class,'showForgotPassword'])->name('showForgotPassword');
 Route::post('/forgotpassword',[UserController::class,'forgotPassword'])->name('forgotPassword');
+
+Route::get('/changePassword',[UserController::class,'showResetPassword'])->name('showResetPassword');
+Route::post('/changePassword/{forgot_unique}',[UserController::class,'resetPassword'])->name('resetPassword');
+
